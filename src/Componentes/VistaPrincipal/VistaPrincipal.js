@@ -1,28 +1,24 @@
 import React, { Component } from 'react';
-import logo from '../../logo.svg';
-import './../../App.css';
+import './Style.scss';
+import RecipeReviewCard from './../Tarjeta/Tarjeta';
+import AppBar from '../AppBar/AppBar';
+import {Grid} from '@material-ui/core'
+
 
 class VistaPrincipal extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <AppBar />
+      
+      <Grid container justify={'center'}>
+        <Grid item>
+        <RecipeReviewCard />
+        </Grid>
+      </Grid>
+       
       </div>
     );
   }
 }
-
 export default VistaPrincipal;
