@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../../logo.svg';
-import './../../App.css';
-import Categoria from './Categoria/Categoria';
+
 import './Style.scss'
 
 class VistaPrincipal extends Component {
@@ -20,7 +18,7 @@ class VistaPrincipal extends Component {
           >
             Learn React
           </a>
-          <Categoria/>
+         
         </header>
       </div>
     );
