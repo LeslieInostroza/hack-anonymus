@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
-import logo from '../../logo.svg';
-import './Style.scss'
+import './Style.scss';
+import RecipeReviewCard from './../Tarjeta/Tarjeta';
+import AppBar from '../AppBar/AppBar';
 
 class VistaPrincipal extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <p id="parra">
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-        </header>
+      <AppBar />
+       <RecipeReviewCard />
       </div>
     );
   }
 }
-
 export default VistaPrincipal;
