@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../../logo.svg';
 import './../../App.css';
+import Categoria from './Categoria/Categoria';
 
 class VistaPrincipal extends Component {
   render() {
@@ -19,6 +20,7 @@ class VistaPrincipal extends Component {
           >
             Learn React
           </a>
+          <Categoria/>
         </header>
       </div>
     );
