@@ -12,6 +12,7 @@ import './Modal.css'
 import {Link} from 'react-router-dom';
 import VistaAyuda from '../ayuda/Ayuda';
 
+
 function getModalStyle() {
   const top = 50;
   const left = 50;
