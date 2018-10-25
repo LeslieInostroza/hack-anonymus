@@ -14,3 +14,23 @@
     color: #596679;
     text-align: center;
 }
+
+@media (max-width: 700px) {
+    .contenedorVista {
+        padding: 2em;
+    }
+    .titulo3 {
+        color: #596679;
+        margin-left: 0px;
+       margin-right: 0px;
+    }
+    .lista {
+        color: #596679;
+       margin-left: 0px;
+       margin-right: 0px;
+       padding: 1em;
+ 
+    }
+ 
+ 
+ }
