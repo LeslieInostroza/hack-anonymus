@@ -58,7 +58,7 @@ class RecipeReviewCard extends React.Component {
     const { classes } = this.props;
 
     return (
-      <Card className={classes.card}>
+      <Card className={classes.card} style={{width: '25em'}}>
         <CardHeader
           action={
             <IconButton>
