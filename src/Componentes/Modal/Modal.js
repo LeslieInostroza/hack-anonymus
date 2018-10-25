@@ -8,6 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import logo from './../../IMG/logo.png'
+import logoPng from './../../IMG/logo1.png'
 import './Modal.css'
 
 function rand() {
@@ -67,7 +68,7 @@ class SimpleModal extends React.Component {
         >
 
           <div style={getModalStyle()} className={classes.paper}>
-          <img src={logo} alt="" />
+          <img src={logoPng} alt="" />
             <MenuItem className="btn" onClick={this.handleClose}>Ayuda</MenuItem>
             <MenuItem className="btn" onClick={this.handleClose}>Subir Archio</MenuItem>
             <MenuItem className="btn" onClick={this.handleClose}>Listado de categorias</MenuItem>
