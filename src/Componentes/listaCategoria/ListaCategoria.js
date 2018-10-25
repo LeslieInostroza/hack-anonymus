@@ -5,60 +5,61 @@ import Typography from '@material-ui/core/Typography';
 import data from './../../data/data.json';
 
 class InteractiveList extends React.Component {
- state = {
-   dense: false,
-   secondary: false,
-   data: [],
- };
+  state = {
+    dense: false,
+    secondary: false,
+    data: [],
+  };
 
- componentWillMount(){
-  let  categorias = new Set();
-  data.forEach(e => categorias.add(e.Categoria[0].categoria))
-  
-  let categoriasFinal = [];
-   for ( let ele of categorias ) {
-     categoriasFinal.push(ele)
-   }
-   this.setState({data: categoriasFinal
-  })
- }
 
- render() {
-   console.log(this.state.data)
-   return (
-     <Grid>
-     <Grid  container
- direction="row"
- justify="center"
- alignItems="center">
-         <Grid item >
-           <Typography align='center' variant="h6" >
-             Text only
+  componentWillMount() {
+    let categorias = new Set();
+    data.forEach(e => categorias.add(e.Categoria[0].categoria))
+
+    let categoriasFinal = [];
+    for (let ele of categorias) {
+      categoriasFinal.push(ele)
+    }
+    this.setState({
+      data: categoriasFinal
+    })
+  }
+  render() {
+    console.log(this.state.data)
+    return (
+      <Grid>
+        <Grid container
+          direction="row"
+          justify="center"
+          alignItems="center">
+          <Grid item >
+            <Typography align='center' variant="h6" >
+              Text only
            </Typography>
-     </Grid>
-         <Grid  container style={{textAlign: 'center', marginTop: '2em'}}
- direction="row"
- justify="center"
- alignItems="center">
-               {
-               this.state.data.map((e,i) => (
-                 <Grid item md={3} sm={3}>
-                   <p>{e}</p>
-                 </Grid>
-               ))
-               }
-         </Grid>
-         </Grid>
+          </Grid>
+          <Grid container style={{ textAlign: 'center', marginTop: '2em' }}
+            direction="row"
+            justify="center"
+            alignItems="center">
+            {
+              this.state.data.map((e, i) => (
+                <Grid item md={3} sm={3}>
+                  <p>{e}</p>
+                </Grid>
+              ))
+            }
+          </Grid>
+        </Grid>
 
-       </Grid>
+      </Grid>
 
 
-   );
- }
+    );
+  }
 }
 
 InteractiveList.propTypes = {
- classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired,
 };
 
 export default InteractiveList;
