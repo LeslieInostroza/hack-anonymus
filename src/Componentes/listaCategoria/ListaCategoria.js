@@ -36,17 +36,17 @@ class InteractiveList extends React.Component {
           justify="center"
           alignItems="center">
           <Grid item >
-            <Typography align='center' variant="h6" >
-              Categorias
+            <Typography style={{marginTop: '38px'}} align='center' variant="h6" >
+              categorias
            </Typography>
           </Grid>
-          <Grid container style={{ textAlign: 'center', marginTop: '2em' }}
+          <Grid container style={{ textAlign: 'center', marginTop: '6em' }}
             direction="row"
             justify="center"
             alignItems="center">
             {
               this.state.data.map((e, i) => (
-                <Grid item md={3} sm={3}>
+                <Grid item md={3} sm={3} xs={6}>
                   <p>{e}</p>
                 </Grid>
               ))

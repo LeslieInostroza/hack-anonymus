@@ -43,6 +43,7 @@
   width: 15% !important;
   float: right;
   left: 300px !important; 
+  top: 5px !important;
 }
 
  @media(min-width: 300px) and (max-width: 450px){
@@ -68,3 +69,24 @@
     width: 15% !important;
   }
 } 
+@media(min-width: 1440px){
+  .imgLogoNav{
+    position: relative;
+    left: 726px  !important;
+    width: 15% !important;
+  }
+}
+@media(min-width: 1600px) and (max-width:1700px){
+  .imgLogoNav{
+    position: relative;
+    left: 635px !important;
+    width: 15% !important;
+  }
+}
+@media(min-width:1701px) and (max-width:1800px){
+  .imgLogoNav{
+    position: relative;
+    left: 698px !important;
+    width: 15% !important;
+  }
+}
