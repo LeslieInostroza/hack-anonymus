@@ -4,8 +4,6 @@ import './Style.scss';
 import RecipeReviewCard from './../Tarjeta/Tarjeta';
 import {Grid} from '@material-ui/core'
 
-
-
 class VistaPrincipal extends Component {
   render() {
     return (
