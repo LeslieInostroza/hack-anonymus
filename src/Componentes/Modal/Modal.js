@@ -10,6 +10,7 @@ import logoBlanco from './../../IMG/logo5.png';
 import {  CreateNewFolder, AttachFile,LiveHelp,Home} from '@material-ui/icons';
 import './Modal.css'
 import {Link} from 'react-router-dom';
+import VistaAyuda from '../ayuda/Ayuda';
 
 function getModalStyle() {
   const top = 50;
@@ -33,9 +34,13 @@ const styles = theme => ({
 });
 
 const ListaCategorias = props => <Link to="/lista" {...props} />
+
+const SubirArchivo = props => <Link to="/subirarchivo" {...props} />
+
 const SubirDocumento = props => <Link to="/" {...props} />
 const Ayuda = props => <Link to="/ayuda"{...props} />
 const Inicio = props => <Link to="/inicio" {...props} />
+
 
 class SimpleModal extends React.Component {
   state = {
@@ -66,10 +71,12 @@ class SimpleModal extends React.Component {
         >
           <div style={getModalStyle()} className={classes.paper}>
           <img className="imgLogo" src={logoPng} alt="" />
-          <MenuItem className="btn" onClick={this.handleClose} component={Inicio}>Inicio <Home className="iconos3"></Home> </MenuItem>
-            <MenuItem className="btn" onClick={this.handleClose}>Ayuda <LiveHelp className="iconos3"></LiveHelp> </MenuItem>
+
+          <MenuItem className="btn" onClick={this.handleClose} component={Inicio}>Inicio <LiveHelp className="iconos3"></LiveHelp> </MenuItem>
+            <MenuItem className="btn" onClick={this.handleClose} component={Ayuda}> Ayuda <LiveHelp className="iconos3"></LiveHelp> </MenuItem>
+
             <MenuItem className="btn" onClick={this.handleClose} component={ListaCategorias}>Categorias <AttachFile className="icon"></AttachFile> </MenuItem>
-            <MenuItem className="btn" onClick={this.handleClose}>Subir Archivo <CreateNewFolder className="iconos3"></CreateNewFolder></MenuItem>
+            <MenuItem className="btn" onClick={this.handleClose}component={SubirArchivo} >Subir Archivo <CreateNewFolder className="iconos3"></CreateNewFolder></MenuItem>
           </div>
         </Modal>
           <img className="imgLogoNav" src={logoBlanco} alt="" />
