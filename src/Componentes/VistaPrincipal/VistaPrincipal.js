@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import './Style.scss'
 import './Style.scss';
 import RecipeReviewCard from './../Tarjeta/Tarjeta';
 import AppBar from '../AppBar/AppBar';
 import {Grid} from '@material-ui/core'
+
 
 
 class VistaPrincipal extends Component {
@@ -16,7 +18,6 @@ class VistaPrincipal extends Component {
         <RecipeReviewCard />
         </Grid>
       </Grid>
-       
       </div>
     );
   }
