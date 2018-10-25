@@ -1,5 +1,40 @@
 .titulo {
     margin: 0%;
-    padding: 5em;
-    color: red;
+    padding: 6em;
+    color: #ffffff;
+    text-align: center;
+  
 }
+
+.contenedorIconos {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* justify-content: space-around; */
+}
+
+.iconos {
+  font-size: 10em !important;
+  color: white;
+  margin-left: 100px;
+  margin-right: 100px;
+  border: solid white;
+  border-radius: 50%;
+  padding: 10px;
+
+}
+
+.important:hover {
+   cursor: pointer; 
+   background-color: #FFB200;
+   border-radius: 50%;
+}
+
+.contenedorComponente {
+    background-color: #1398E9;
+    padding-bottom: 4em;
+    margin: 0%;
+    height: 650px;
+}
+

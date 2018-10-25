@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
 import './Inicio.css';
-import Button from '@material-ui/core/Button';
+import { Done, Description, TouchApp} from '@material-ui/icons';
+import Router from 'react-router-dom';
 
 class Inicio extends Component {
     
     render() {
         return (
-            <div className = 'titulo'>
-                <h1>Clasifica tus productos de manera eficaz</h1>
-    
+            <div className= 'contenedorComponente'>
+                <div className = 'titulo'>
+                    <h1>Clasifica tus productos de manera fácil, ágil e intuitiva</h1>
+                 </div> 
+            <div className= 'contenedorIconos'>
+                <Description className= 'iconos'></Description>
+                <TouchApp className= 'iconos important'></TouchApp>
+                <Done className= 'iconos'></Done>
+            </div>
+
+            
             </div>
         )
     }
