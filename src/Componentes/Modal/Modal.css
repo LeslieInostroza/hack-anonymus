@@ -76,3 +76,17 @@
     width: 15% !important;
   }
 }
+@media(min-width: 1600px) and (max-width:1700px){
+  .imgLogoNav{
+    position: relative;
+    left: 635px !important;
+    width: 15% !important;
+  }
+}
+@media(min-width:1701px) and (max-width:1800px){
+  .imgLogoNav{
+    position: relative;
+    left: 698px !important;
+    width: 15% !important;
+  }
+}
