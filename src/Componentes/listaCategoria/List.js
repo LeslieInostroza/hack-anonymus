@@ -39,8 +39,7 @@ class InteractiveList extends React.Component {
       </Grid>
           <Grid  container
   direction="row"
-  justify="space-around
-"
+  justify="space-around"
   alignItems="center">
                 {
                 this.state.data.map((e,i) => ( 
