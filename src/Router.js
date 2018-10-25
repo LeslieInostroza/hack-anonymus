@@ -4,8 +4,10 @@ import App from './App';
 import VistaPrincipal from './Componentes/VistaPrincipal/VistaPrincipal';
 import ListaCategoria from './Componentes/listaCategoria/ListaCategoria';
 import Inicio from './Componentes/inicio/Inicio';
+
 import Subirarchivo from './Componentes/VistaPrincipal/Subirarchivo'
 import VistaAyuda from './Componentes/ayuda/Ayuda';
+
 
 
 class Routers extends Component {
@@ -15,6 +17,7 @@ class Routers extends Component {
         <App>
         <Route path="/" component={() => {
             return  <Redirect to="/inicio"></Redirect>
+
           }}>
           </Route>
         <Route path="/inicio" exac component={Inicio}></Route>
@@ -23,6 +26,7 @@ class Routers extends Component {
           <Route path="/lista"  component={ListaCategoria}></Route>
           <Route path="/ayuda" component={VistaAyuda}></Route>
           </App>
+
       </ReactRouter>
   
     )

@@ -4,6 +4,9 @@ class Uploadcsv extends Component {
   render() {
     return (
       <input id="upload" ref="upload" type="file" accept=".csv" onChange={this.onChangeFile.bind(this)}/>
+    
+    
+    
     );
   }
 
@@ -16,7 +19,11 @@ class Uploadcsv extends Component {
     lector.onload = function(e) {
       var contenido = e.target.result;
       console.log(procesarCsv(contenido));//muestra en la consola el contenido del archivo
-     // mostrarContenido(contenido);
+    
+    
+    
+    
+      // mostrarContenido(contenido);
     };
     lector.readAsText(archivo);
   }
