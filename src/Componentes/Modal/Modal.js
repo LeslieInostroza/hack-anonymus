@@ -32,6 +32,7 @@ const styles = theme => ({
 });
 
 const ListaCategorias = props => <Link to="/lista" {...props} />
+const SubirArchivo = props => <Link to="/subirarchivo" {...props} />
 
 class SimpleModal extends React.Component {
   state = {
@@ -66,7 +67,7 @@ class SimpleModal extends React.Component {
           <img className="imgLogo" src={logoPng} alt="" />
             <MenuItem className="btn" onClick={this.handleClose} >Ayuda <LiveHelp className="iconos3"></LiveHelp> </MenuItem>
             <MenuItem className="btn" onClick={this.handleClose} component={ListaCategorias}>Categorias <AttachFile className="icon"></AttachFile> </MenuItem>
-            <MenuItem className="btn" onClick={this.handleClose}>Subir Archivo <CreateNewFolder className="iconos3"></CreateNewFolder></MenuItem>
+            <MenuItem className="btn" onClick={this.handleClose}component={SubirArchivo} >Subir Archivo <CreateNewFolder className="iconos3"></CreateNewFolder></MenuItem>
           </div>
         </Modal>
           <img className="imgLogoNav" src={logoPng} alt="" />
