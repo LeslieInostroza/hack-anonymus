@@ -2,8 +2,8 @@
  background-color: transparent !important ;
  box-shadow: none !important;
  color: white !important;
- top: 54% !important;
- left: 50% !important;
+ top: 45% !important;
+ left: 51% !important;
  text-align: center !important;
 /*  margin-left: 10px !important; */
 }
@@ -13,7 +13,7 @@
 } */
 
 .ModalColor{
-  background-color: rgba(0, 139, 236, 0.8)!important;
+  background-color: rgb(0, 149, 255, 0.8)!important;
 }
 .MuiMenuItem-root-216{
   color: none !important;
@@ -22,6 +22,18 @@
   color: white !important;
   justify-content: center !important;
   font-size: 30px !important;
-  margin-top: 15px !important;
-  margin-bottom: 15px !important;
+  margin-top: 30px !important;
+  margin-bottom: 30px !important;
+}
+.imgLogo{
+  width: 70% !important;
+  position: relative;
+  bottom: 25px; 
+}
+.iconos{
+  font-size: 30px !important;
+  margin-left: 10px !important;
+}
+.icon{
+  font-size: 30px !important;
 }
