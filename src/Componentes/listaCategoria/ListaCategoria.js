@@ -1,36 +1,70 @@
-import React, {Component} from 'react';
-import {Grid} from '@material-ui/core';
-import List  from './List';
+import React from 'react';
+import PropTypes from 'prop-types';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
 import data from './../../data/data.json';
-class ListaCategoria extends Component {
+import { Divider } from '@material-ui/core';
+// import './lista.css';
+
+class InteractiveList extends React.Component {
   state = {
     dense: false,
     secondary: false,
     data: [],
   };
 
-  componentWillMount(){ 
-    let  categorias = new Set();
+
+  componentWillMount() {
+    let categorias = new Set();
     data.forEach(e => categorias.add(e.Categoria[0].categoria))
 
     let categoriasFinal = [];
-    for ( let ele of categorias ) {
+    for (let ele of categorias) {
       categoriasFinal.push(ele)
-    }  
-   
-    this.setState({data: [categoriasFinal]})
+    }
+    this.setState({
+      data: categoriasFinal
+    })
   }
-  render(){
+  render() {
     console.log(this.state.data)
-    return(
-      <div>
-        {
-          this.state.data.map(e => (
-            <p> {e}</p>
-          ))
-         
-        }
+    return (
+      <div className='categoria'>
+        <Grid>
+        <Grid container
+          direction="row"
+          justify="center"
+          alignItems="center">
+          <Grid item >
+            <Typography align='center' variant="h6" >
+              Categorias
+           </Typography>
+          </Grid>
+          <Grid container style={{ textAlign: 'center', marginTop: '2em' }}
+            direction="row"
+            justify="center"
+            alignItems="center">
+            {
+              this.state.data.map((e, i) => (
+                <Grid item md={3} sm={3}>
+                  <p>{e}</p>
+                </Grid>
+              ))
+            }
+          </Grid>
+        </Grid>
+
+      </Grid>
+
       </div>
-  )} 
+      
+
+    );
+  }
 }
-export default ListaCategoria;
+
+InteractiveList.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default InteractiveList;
