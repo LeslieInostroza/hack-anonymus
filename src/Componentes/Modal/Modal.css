@@ -1,7 +1,21 @@
 .SimpleModal-paper-44{
  background-color: transparent !important ;
  box-shadow: none !important;
+ color: white !important;
+ top: 54% !important;
+ left: 52% !important;
 }
-.MuiBackdrop-root-206{
+
+/* Modal{
   background-color: rgba(259, 259, 259, 0.8) !important;
+} */
+
+.ModalColor{
+  background-color: rgba(0, 139, 236, 0.8)!important;
+}
+.MuiMenuItem-root-216{
+  color: none !important;
+}
+.btn{
+  color: white !important;
 }

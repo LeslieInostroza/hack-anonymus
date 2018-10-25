@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import logo from './../../IMG/logo.png'
 import './Modal.css'
 
 function rand() {
@@ -28,7 +29,7 @@ const styles = theme => ({
   paper: {
     position: 'absolute',
     width: theme.spacing.unit * 50,
-    backgroundColor: theme.palette.background.paper,
+   /*  backgroundColor: theme.palette.background.paper, */
     boxShadow: theme.shadows[5],
     padding: theme.spacing.unit * 4,
   },
@@ -58,16 +59,18 @@ class SimpleModal extends React.Component {
             <MenuIcon />
         </IconButton>
         
-        <Modal
+        <Modal className="ModalColor"
           aria-labelledby="simple-modal-title"
           aria-describedby="simple-modal-description"
           open={this.state.open}
           onClose={this.handleClose}
         >
+
           <div style={getModalStyle()} className={classes.paper}>
-            <MenuItem onClick={this.handleClose}>Ayuda</MenuItem>
-            <MenuItem onClick={this.handleClose}>Subir Archio</MenuItem>
-            <MenuItem onClick={this.handleClose}>Listado de categorias</MenuItem>
+          <img src={logo} alt="" />
+            <MenuItem className="btn" onClick={this.handleClose}>Ayuda</MenuItem>
+            <MenuItem className="btn" onClick={this.handleClose}>Subir Archio</MenuItem>
+            <MenuItem className="btn" onClick={this.handleClose}>Listado de categorias</MenuItem>
           </div>
         </Modal>
       </div>
