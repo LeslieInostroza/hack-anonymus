@@ -18,13 +18,16 @@ class VistaAyuda extends Component {
                             productos en formato svg, esto atraves del boton que 
                             indica 'INGRESA EL LISTADO DE TUS PRODUCTOS'
                         </li>
+                        <br/>
                         <li>Luego debes seleccionar cualquiera de los productos
                             que se encuentren en tu lista.
                         </li>
+                        <br/>
                         <li>Una vez seleccionado, nuestro sistema
                             te ofrecera las mejores alternativas de categorias
                             segun coincidencia de palabras que ingreses en el input.
                         </li>
+                        <br/>
                         <li>Finalmente debes escoger la que concideres mas adecuada, una vez 
                             seleccionado tu producto pasara a estar en la lista de elementos 
                             categorizados.
