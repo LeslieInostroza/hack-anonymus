@@ -37,3 +37,34 @@
 .icon{
   font-size: 30px !important;
 }
+
+.imgLogoNav {
+  position: relative;
+  width: 15% !important;
+  float: right;
+  left: 300px !important; 
+}
+
+ @media(min-width: 300px) and (max-width: 450px){
+  .imgLogoNav{
+    position: relative;
+    left: 0 !important;
+    width: 40% !important;
+    height: 100% !important;
+    top: 7px !important;
+  }
+} 
+@media(min-width: 451px) and (max-width: 768px){
+  .imgLogoNav{
+    position: relative;
+    left: 0 !important;
+    width: 20% !important;
+  }
+} 
+@media(min-width: 769px) and (max-width: 1024px){
+  .imgLogoNav{
+    position: relative;
+    left: 0 !important;
+    width: 15% !important;
+  }
+} 

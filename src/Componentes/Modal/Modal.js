@@ -55,12 +55,9 @@ class SimpleModal extends React.Component {
 
     return (
       <div>
-
-        <IconButton onClick={this.handleOpen}
-       >
+        <IconButton onClick={this.handleOpen}>
             <MenuIcon />
         </IconButton>
-        
         <Modal className="ModalColor"
           aria-labelledby="simple-modal-title"
           aria-describedby="simple-modal-description"
@@ -75,6 +72,8 @@ class SimpleModal extends React.Component {
             <MenuItem className="btn" onClick={this.handleClose}>Subir Archivo <CreateNewFolder className="iconos"></CreateNewFolder></MenuItem>
           </div>
         </Modal>
+          <img className="imgLogoNav" src={logoPng} alt="" />
+        
       </div>
     );
   }
