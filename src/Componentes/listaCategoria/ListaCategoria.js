@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import data from './../../data/data.json';
+import { Divider } from '@material-ui/core';
+// import './lista.css';
 
 class InteractiveList extends React.Component {
   state = {
@@ -27,7 +29,8 @@ class InteractiveList extends React.Component {
   render() {
     console.log(this.state.data)
     return (
-      <Grid>
+      <div className='categoria'>
+        <Grid>
         <Grid container
           direction="row"
           justify="center"
@@ -53,6 +56,8 @@ class InteractiveList extends React.Component {
 
       </Grid>
 
+      </div>
+      
 
     );
   }

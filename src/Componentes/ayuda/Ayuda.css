@@ -1,5 +1,6 @@
 .contenedorVista {
     padding: 4em;
+
    
 }
 
@@ -8,11 +9,16 @@
    margin-left: 250px;
    margin-right: 250px;
    padding: 3em;
+
 }
 
 .titulo3 {
     color: #596679;
     text-align: center;
+
+    margin-left: 250px;
+   margin-right: 250px;
+
 }
 
 @media (max-width: 700px) {
@@ -22,15 +28,14 @@
     .titulo3 {
         color: #596679;
         margin-left: 0px;
-       margin-right: 0px;
+       margin-right: 0px;     
+
     }
     .lista {
         color: #596679;
        margin-left: 0px;
        margin-right: 0px;
        padding: 1em;
- 
     }
- 
- 
- }
+}
+
