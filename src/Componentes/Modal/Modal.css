@@ -3,7 +3,9 @@
  box-shadow: none !important;
  color: white !important;
  top: 54% !important;
- left: 52% !important;
+ left: 50% !important;
+ text-align: center !important;
+/*  margin-left: 10px !important; */
 }
 
 /* Modal{
@@ -18,4 +20,8 @@
 }
 .btn{
   color: white !important;
+  justify-content: center !important;
+  font-size: 30px !important;
+  margin-top: 15px !important;
+  margin-bottom: 15px !important;
 }
