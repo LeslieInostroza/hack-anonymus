@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import RecipeReviewCard from './../Tarjeta/Tarjeta';
 import {Grid} from '@material-ui/core';
 import List  from './List';
 class ListaCategoria extends Component {

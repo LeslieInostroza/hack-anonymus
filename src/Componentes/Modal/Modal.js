@@ -36,7 +36,7 @@ const styles = theme => ({
   },
 });
 
-const ListaCategorias = props => <Link to="/listaCategoria" {...props} />
+const ListaCategorias = props => <Link to="/lista" {...props} />
 
 class SimpleModal extends React.Component {
   state = {

@@ -8,7 +8,7 @@ import {Chip} from '@material-ui/core';
 
 
 let  categorias = new Set();
- data.forEach(e => categorias.add(e.Categoria))
+ data.forEach(e => categorias.add(e.Categoria[0].categoria))
 
 let categoriasFinal = [];
 class InteractiveList extends React.Component {
@@ -21,27 +21,40 @@ class InteractiveList extends React.Component {
   componentWillMount(){ 
     for ( let ele of categorias ) {
       categoriasFinal.push(ele)
-    }
+    }  
   }
 
   render() {
     console.log(categoriasFinal)
     return (
-        <Grid container justify={'flex-start'}>
+      <Grid>
+      <Grid  container
+  direction="row"
+  justify="center"
+  alignItems="center">
           <Grid item >
-            <Typography variant="h6" >
+            <Typography align='center' variant="h6" >
               Text only
             </Typography>
-      <div>
+      </Grid>
+          <Grid  container
+  direction="row"
+  justify="space-around
+"
+  alignItems="center">
                 {
                 this.state.data.map((e,i) => ( 
-                  <Chip  label={e}></Chip>
+                  <Grid item md={3} sm={3}>
+                    <p>{e}</p>
+                  </Grid>
                 ))  
                 }
-          </div>
+          </Grid>
           </Grid>
          
         </Grid>
+    
+        
     );
   }
 }

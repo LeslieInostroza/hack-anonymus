@@ -2,23 +2,17 @@ import React, { Component } from 'react';
 import { BrowserRouter as ReactRouter, Route, Redirect } from 'react-router-dom';
 import App from './App';
 import VistaPrincipal from './Componentes/VistaPrincipal/VistaPrincipal';
-import ListaCategoria from './Componentes/listaCategoria/ListaCategoria';;
+ import ListaCategoria from './Componentes/listaCategoria/ListaCategoria';
+import Inicio from './Componentes/inicio/Inicio';
 
 
-export default class Router extends Component {
-  constructor() {
-    super();
-    this.state = {
-      user: false
-    }
-  }
-
-
-  render() {
-    return (
+class Routers extends Component {
+  render(){
+    return(
       <ReactRouter>
         <App>
-          <Route path="/home" exac component={VistaPrincipal}></Route>
+        <Route path="/inicio" exac component= {Inicio}></Route>
+          <Route path="/home" component={VistaPrincipal}></Route>
           <Route path="/lista"  component={ListaCategoria}></Route>
         </App>
       </ReactRouter>
@@ -26,5 +20,6 @@ export default class Router extends Component {
 
   }
 }
+export default Routers
 
 
