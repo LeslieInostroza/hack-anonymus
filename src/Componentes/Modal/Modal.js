@@ -1,22 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
-import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import logo from './../../IMG/logo.png';
 import logoPng from './../../IMG/logo1.png';
 import {  CreateNewFolder, AttachFile,LiveHelp} from '@material-ui/icons';
 import './Modal.css'
 import {Link} from 'react-router-dom';
-import ListaCategoria from './../listaCategoria/ListaCategoria';
-
-function rand() {
-  return Math.round(Math.random() * 20) - 10;
-}
 
 function getModalStyle() {
   const top = 50;
@@ -72,11 +64,9 @@ class SimpleModal extends React.Component {
           <div style={getModalStyle()} className={classes.paper}>
 
           <img className="imgLogo" src={logoPng} alt="" />
-            <MenuItem className="btn" onClick={this.handleClose}>Ayuda <LiveHelp className="iconos3"></LiveHelp> </MenuItem>
+            <MenuItem className="btn" onClick={this.handleClose} >Ayuda <LiveHelp className="iconos3"></LiveHelp> </MenuItem>
             <MenuItem className="btn" onClick={this.handleClose} component={ListaCategorias}>Categorias <AttachFile className="icon"></AttachFile> </MenuItem>
             <MenuItem className="btn" onClick={this.handleClose}>Subir Archivo <CreateNewFolder className="iconos3"></CreateNewFolder></MenuItem>
-
-
           </div>
         </Modal>
           <img className="imgLogoNav" src={logoPng} alt="" />

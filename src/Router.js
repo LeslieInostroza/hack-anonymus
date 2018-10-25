@@ -11,6 +11,9 @@ class Routers extends Component {
     return(
       <ReactRouter>
         <App>
+        <Route path="/" component={() => {
+            return  <Redirect to="/inicio"></Redirect>
+          }}></Route>
         <Route path="/inicio" exac component= {Inicio}></Route>
           <Route path="/home" component={VistaPrincipal}></Route>
           <Route path="/lista"  component={ListaCategoria}></Route>
