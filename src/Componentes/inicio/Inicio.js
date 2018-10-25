@@ -14,7 +14,7 @@ class Inicio extends Component {
                  </div> 
             <div className= 'contenedorIconos'>
                 <Description className='iconos'></Description>
-                <Link to="/lista">
+                <Link to="/subirarchivo">
                 <TouchApp className='iconos important'></TouchApp>
                 </Link>
                
