@@ -8,6 +8,8 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import './Modal.css'
+import {Link} from 'react-router-dom';
+import ListaCategoria from './../listaCategoria/ListaCategoria';
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -33,6 +35,8 @@ const styles = theme => ({
     padding: theme.spacing.unit * 4,
   },
 });
+
+const ListaCategorias = props => <Link to="/listaCategoria" {...props} />
 
 class SimpleModal extends React.Component {
   state = {
@@ -66,8 +70,8 @@ class SimpleModal extends React.Component {
         >
           <div style={getModalStyle()} className={classes.paper}>
             <MenuItem onClick={this.handleClose}>Ayuda</MenuItem>
-            <MenuItem onClick={this.handleClose}>Subir Archio</MenuItem>
-            <MenuItem onClick={this.handleClose}>Listado de categorias</MenuItem>
+            <MenuItem onClick={this.handleClose} >Subir Archio</MenuItem>
+            <MenuItem onClick={this.handleClose} component={ListaCategorias} >Listado de categorias</MenuItem>
           </div>
         </Modal>
       </div>
