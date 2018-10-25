@@ -10,7 +10,9 @@ import MenuItem from '@material-ui/core/MenuItem';
 import logo from './../../IMG/logo.png';
 import logoPng from './../../IMG/logo1.png';
 import {  CreateNewFolder, LiveHelp, AttachFile } from '@material-ui/icons';
-import './Modal.css';
+import './Modal.css'
+import {Link} from 'react-router-dom';
+import ListaCategoria from './../listaCategoria/ListaCategoria';
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -36,6 +38,8 @@ const styles = theme => ({
     padding: theme.spacing.unit * 4,
   },
 });
+
+const ListaCategorias = props => <Link to="/lista" {...props} />
 
 class SimpleModal extends React.Component {
   state = {
@@ -66,10 +70,13 @@ class SimpleModal extends React.Component {
         >
 
           <div style={getModalStyle()} className={classes.paper}>
+
           <img className="imgLogo" src={logoPng} alt="" />
             <MenuItem className="btn" onClick={this.handleClose}>Ayuda <LiveHelp className="iconos"></LiveHelp> </MenuItem>
-            <MenuItem className="btn" onClick={this.handleClose}>Categorias <AttachFile className="icon"></AttachFile> </MenuItem>
+            <MenuItem className="btn" onClick={this.handleClose} component={ListaCategorias}>Categorias <AttachFile className="icon"></AttachFile> </MenuItem>
             <MenuItem className="btn" onClick={this.handleClose}>Subir Archivo <CreateNewFolder className="iconos"></CreateNewFolder></MenuItem>
+
+
           </div>
         </Modal>
           <img className="imgLogoNav" src={logoPng} alt="" />
