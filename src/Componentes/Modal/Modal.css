@@ -43,6 +43,7 @@
   width: 15% !important;
   float: right;
   left: 300px !important; 
+  top: 5px !important;
 }
 
  @media(min-width: 300px) and (max-width: 450px){

@@ -6,6 +6,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import logoPng from './../../IMG/logo1.png';
+import logoBlanco from './../../IMG/logo5.png';
 import {  CreateNewFolder, AttachFile,LiveHelp,Home} from '@material-ui/icons';
 import './Modal.css'
 import {Link} from 'react-router-dom';
@@ -71,7 +72,7 @@ class SimpleModal extends React.Component {
             <MenuItem className="btn" onClick={this.handleClose}>Subir Archivo <CreateNewFolder className="iconos3"></CreateNewFolder></MenuItem>
           </div>
         </Modal>
-          <img className="imgLogoNav" src={logoPng} alt="" />
+          <img className="imgLogoNav" src={logoBlanco} alt="" />
       </div>
     );
   }
