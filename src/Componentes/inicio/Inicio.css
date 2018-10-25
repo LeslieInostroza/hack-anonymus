@@ -38,3 +38,21 @@
     height: 650px;
 }
 
+@media(min-width: 315px) and (max-width: 768px){
+	.iconos {
+		font-size: 4em !important;
+		color: white;
+		margin-left: 10px;
+		margin-right: 20px;
+		border: solid white;
+		border-radius: 50%;
+		padding: 10px;
+	}
+	.titulo {
+		padding: 2em;
+		padding-bottom: 95px;
+	}
+	h1 {
+		font-size: 42px;
+	}
+}

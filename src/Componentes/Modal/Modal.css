@@ -68,3 +68,10 @@
     width: 15% !important;
   }
 } 
+@media(min-width: 1440px){
+  .imgLogoNav{
+    position: relative;
+    left: 400px !important;
+    width: 15% !important;
+  }
+}
