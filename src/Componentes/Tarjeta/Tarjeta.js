@@ -18,6 +18,8 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Lista from './Lista';
 
+import dataPrincipal from './../../data/data.json';//trae el archivo madre
+
 const styles = theme => ({
   card: {
     maxWidth: 400,
@@ -69,14 +71,67 @@ class RecipeReviewCard extends React.Component {
         />
         <CardContent>
           <Lista />
+          <button onClick={this.clickBoton.bind(this)}>probar</button>
         </CardContent>
       </Card>
     );
   }
+  clickBoton(event){
+    let resultado = buscar('Agua Lacteos gaseosa');
+    console.log(resultado);
+  }
+
 }
 
 RecipeReviewCard.propTypes = {
   classes: PropTypes.object.isRequired,
 };
+
+
+
+function buscar(titulo){
+  //let palabra = 'Bebidas agua';
+  let palabras = titulo.toLowerCase().split(' ');
+  let alinea = [];
+ 
+  let result = false;
+  for(let i=0;i<palabras.length;i++){
+    for(let lineaI=0;lineaI<dataPrincipal.length;lineaI++){
+      let linea = dataPrincipal[lineaI];
+      let aCategoria = [];
+      for(let catI=0;catI<linea.Categoria.length;catI++){
+
+        let categoria = linea.Categoria[catI];
+        let aSubCategoria = [];
+        
+        for(let subI=0;subI<categoria.SubCategoria.length;subI++){
+
+          let SubCategoria = categoria.SubCategoria[subI];
+          //console.log(SubCategoria);
+          if(SubCategoria.SubCategoria.toLowerCase().indexOf(palabras[i]) > -1){
+            aSubCategoria.push(SubCategoria.SubCategoria);
+          }
+        }
+        if(aSubCategoria.length>0){
+          aCategoria.push({"Categoria" :categoria.categoria, "SubCategoria" :aSubCategoria});
+        }else{
+          if(categoria.categoria.toLowerCase().indexOf(palabras[i]) > -1){
+            aCategoria.push({"Categoria" :categoria.categoria, "SubCategoria" :[]});
+          }
+        }
+
+      }    
+      if(aCategoria.length>0){
+        alinea.push({"Linea":linea.Linea, "Categoria" :aCategoria});
+      }else{
+        if(linea.Linea.toLowerCase().indexOf(palabras[i]) > -1){
+          alinea.push({"Linea":linea.Linea, "Categoria" :[]});
+        }
+      }
+    }
+  }
+  return alinea;
+}
+
 
 export default withStyles(styles)(RecipeReviewCard);

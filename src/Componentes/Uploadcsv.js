@@ -24,7 +24,7 @@ class Uploadcsv extends Component {
 }
 
 function procesarCsv(contenido){
-    let filas = contenido.split(/\r?\n/);
+    let filas = contenido.split(/\r?\n/); // Saca saltos de linea y hace arreglo
     let resultado = [];
     for(let i=0;i<filas.lenght; i++){
         console.log(filas[i]);
