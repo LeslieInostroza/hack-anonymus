@@ -4,7 +4,9 @@ import App from './App';
 import VistaPrincipal from './Componentes/VistaPrincipal/VistaPrincipal';
 import ListaCategoria from './Componentes/listaCategoria/ListaCategoria';
 import Inicio from './Componentes/inicio/Inicio';
+
 import Subirarchivo from './Componentes/VistaPrincipal/Subirarchivo';
+
 
 class Routers extends Component {
   render(){
@@ -14,10 +16,12 @@ class Routers extends Component {
         <Route path="/" component={() => {
             return  <Redirect to="/inicio"></Redirect>
           }}></Route>
-          <Route path="/inicio" exac component= {Inicio}></Route>
+
+        <Route path="/inicio"  component= {Inicio}></Route>
+        <Route path="/subirarchivo" component={Subirarchivo}></Route>
           <Route path="/home" component={VistaPrincipal}></Route>
           <Route path="/lista"  component={ListaCategoria}></Route>
-          <Route path="/subirarchivo" component={Subirarchivo}></Route>
+
         </App>
       </ReactRouter>
     )
