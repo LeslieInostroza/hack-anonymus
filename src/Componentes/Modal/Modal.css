@@ -1,7 +1,70 @@
 .SimpleModal-paper-44{
  background-color: transparent !important ;
  box-shadow: none !important;
+ color: white !important;
+ top: 45% !important;
+ left: 51% !important;
+ text-align: center !important;
+/*  margin-left: 10px !important; */
 }
-.MuiBackdrop-root-206{
+
+/* Modal{
   background-color: rgba(259, 259, 259, 0.8) !important;
+} */
+
+.ModalColor{
+  background-color: rgb(0, 149, 255, 0.8)!important;
 }
+.MuiMenuItem-root-216{
+  color: none !important;
+}
+.btn{
+  color: white !important;
+  justify-content: center !important;
+  font-size: 30px !important;
+  margin-top: 30px !important;
+  margin-bottom: 30px !important;
+}
+.imgLogo{
+  width: 70% !important;
+  position: relative;
+  bottom: 25px; 
+}
+.iconos{
+  font-size: 30px !important;
+  margin-left: 10px !important;
+}
+.icon{
+  font-size: 30px !important;
+}
+
+.imgLogoNav {
+  position: relative;
+  width: 15% !important;
+  float: right;
+  left: 300px !important; 
+}
+
+ @media(min-width: 300px) and (max-width: 450px){
+  .imgLogoNav{
+    position: relative;
+    left: 0 !important;
+    width: 40% !important;
+    height: 100% !important;
+    top: 7px !important;
+  }
+} 
+@media(min-width: 451px) and (max-width: 768px){
+  .imgLogoNav{
+    position: relative;
+    left: 0 !important;
+    width: 20% !important;
+  }
+} 
+@media(min-width: 769px) and (max-width: 1024px){
+  .imgLogoNav{
+    position: relative;
+    left: 0 !important;
+    width: 15% !important;
+  }
+} 

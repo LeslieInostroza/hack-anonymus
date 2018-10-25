@@ -7,6 +7,9 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import logo from './../../IMG/logo.png';
+import logoPng from './../../IMG/logo1.png';
+import {  CreateNewFolder, LiveHelp, AttachFile } from '@material-ui/icons';
 import './Modal.css'
 import {Link} from 'react-router-dom';
 import ListaCategoria from './../listaCategoria/ListaCategoria';
@@ -16,8 +19,8 @@ function rand() {
 }
 
 function getModalStyle() {
-  const top = 50 + rand();
-  const left = 50 + rand();
+  const top = 50;
+  const left = 50;
 
   return {
     top: `${top}%`,
@@ -30,7 +33,7 @@ const styles = theme => ({
   paper: {
     position: 'absolute',
     width: theme.spacing.unit * 50,
-    backgroundColor: theme.palette.background.paper,
+   /*  backgroundColor: theme.palette.background.paper, */
     boxShadow: theme.shadows[5],
     padding: theme.spacing.unit * 4,
   },
@@ -56,24 +59,28 @@ class SimpleModal extends React.Component {
 
     return (
       <div>
-
-        <IconButton onClick={this.handleOpen}
-       >
+        <IconButton onClick={this.handleOpen}>
             <MenuIcon />
         </IconButton>
-        
-        <Modal
+        <Modal className="ModalColor"
           aria-labelledby="simple-modal-title"
           aria-describedby="simple-modal-description"
           open={this.state.open}
           onClose={this.handleClose}
         >
+
           <div style={getModalStyle()} className={classes.paper}>
-            <MenuItem onClick={this.handleClose}>Ayuda</MenuItem>
-            <MenuItem onClick={this.handleClose} >Subir Archio</MenuItem>
-            <MenuItem onClick={this.handleClose} component={ListaCategorias} >Listado de categorias</MenuItem>
+
+          <img className="imgLogo" src={logoPng} alt="" />
+            <MenuItem className="btn" onClick={this.handleClose}>Ayuda <LiveHelp className="iconos"></LiveHelp> </MenuItem>
+            <MenuItem className="btn" onClick={this.handleClose} component={ListaCategorias}>Categorias <AttachFile className="icon"></AttachFile> </MenuItem>
+            <MenuItem className="btn" onClick={this.handleClose}>Subir Archivo <CreateNewFolder className="iconos"></CreateNewFolder></MenuItem>
+
+
           </div>
         </Modal>
+          <img className="imgLogoNav" src={logoPng} alt="" />
+        
       </div>
     );
   }
