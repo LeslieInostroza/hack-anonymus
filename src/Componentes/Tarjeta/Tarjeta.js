@@ -50,7 +50,10 @@ const styles = theme => ({
 });
 
 class RecipeReviewCard extends React.Component {
-  state = { expanded: false };
+  state = { 
+    expanded: false,
+    data:[]
+   };
 
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
@@ -58,7 +61,8 @@ class RecipeReviewCard extends React.Component {
 
   render() {
     const { classes } = this.props;
-
+    this.setState(state => ({ data: buscar(this.props.busqueda) }));
+    
     return (
       <Card className={classes.card} style={{width: '25em'}}>
         <CardHeader
@@ -90,6 +94,7 @@ RecipeReviewCard.propTypes = {
 
 
 function buscar(titulo){
+  console.log("buscando:" + titulo);
   //let palabra = 'Bebidas agua';
   let palabras = titulo.toLowerCase().split(' ');
   let alinea = [];
