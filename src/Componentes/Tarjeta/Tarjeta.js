@@ -61,7 +61,9 @@ class RecipeReviewCard extends React.Component {
 
   render() {
     const { classes } = this.props;
-    this.setState(state => ({ data: buscar(this.props.busqueda) }));
+    let categorias = buscar(this.props.busqueda);
+    console.log(categorias);
+    //this.setState(state => ({ data: buscar(this.props.busqueda) }));
     
     return (
       <Card className={classes.card} style={{width: '25em'}}>
@@ -71,11 +73,10 @@ class RecipeReviewCard extends React.Component {
               <MoreVertIcon />
             </IconButton>
           }
-          title="Agua"
+          title={this.props.busqueda}
         />
         <CardContent>
-          <Lista />
-          <button onClick={this.clickBoton.bind(this)}>probar</button>
+          <Lista categorias={categorias} />
         </CardContent>
       </Card>
     );

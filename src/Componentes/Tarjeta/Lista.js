@@ -46,32 +46,54 @@ class CheckboxListSecondary extends React.Component {
       <div className={classes.root}>
         <List>
           <ListItemText primary={`Linea de Producto `} />
-            <ListItem  dense button className={classes.listItem}>
-              <ListItemText primary={`Line item `} />
-              <ListItemSecondaryAction>
-              <Switch />
-              </ListItemSecondaryAction>
-            </ListItem>
+          {
+            this.props.categorias.map(element =>
+              <ListItem  dense button className={classes.listItem}>
+                <ListItemText primary={element.Linea} />
+                <ListItemSecondaryAction>
+                <Switch />
+                </ListItemSecondaryAction>
+              </ListItem>
+            )
+          }
+
         
         </List>
         <List>
           <ListItemText primary={`Categoria `} />
-            <ListItem  dense button className={classes.listItem}>
-              <ListItemText primary={`Line item `} />
-              <ListItemSecondaryAction>
-              <Switch />
-              </ListItemSecondaryAction>
-            </ListItem>
+            {
+              this.props.categorias.map(element =>
+                element.Categoria.map(catElement =>
+                  <ListItem  dense button className={classes.listItem}>
+                  <ListItemText primary={``+ catElement.Categoria} />
+                  <ListItemSecondaryAction>
+                  <Switch />
+                  </ListItemSecondaryAction>
+                </ListItem>
+              )
+
+              )
+            }
+
         </List>
         <List>
           <ListItemText primary={`Sub Categoria`} />
-            <ListItem  dense button className={classes.listItem}>
-              <ListItemText primary={`Line item `} />
-              <ListItemSecondaryAction>
-              <Switch />
-              </ListItemSecondaryAction>
-              
-            </ListItem>
+          {
+            this.props.categorias.map(element =>
+              element.Categoria.map(catElement =>
+                catElement.SubCategoria.map(subElement =>
+                <ListItem  dense button className={classes.listItem}>
+                    <ListItemText primary={subElement} />
+                    <ListItemSecondaryAction>
+                    <Switch />
+                    </ListItemSecondaryAction>
+                  
+                </ListItem>                  
+                  )
+                ))
+
+          }
+
             <TextField
           id="standard-search"
           label="ej: sabor manzana"

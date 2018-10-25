@@ -6,6 +6,7 @@ import Uploadcsv from './../Uploadcsv';
 import RecipeReviewCard from './../Tarjeta/Tarjeta';
 
 
+
 // function procesarCsv(contenido){
 
   
@@ -40,7 +41,6 @@ class Subirarchivo extends Component {
     lector.onload = (e) => {
       var contenido = e.target.result;
       let filas = contenido.split(/\r?\n/); 
-
       this.setState({
         ...this.state,
         categoriasFinal : filas
@@ -59,14 +59,18 @@ class Subirarchivo extends Component {
       <div className="App">
        <input id="upload" ref="upload" type="file" accept=".csv" onChange={this.onChangeFile.bind(this)}/>
        {
-         this.state.categoriasFinal.map( element => <p>{element}</p>)
+         this.state.categoriasFinal.map((element) => 
+           <Grid item md={3} sm={3}>
+            <RecipeReviewCard key={element} busqueda={element} ></RecipeReviewCard>
+           </Grid>
+        )
        }
       </div>
     );
   }
 }
 
-{/* <input id="upload" ref="upload" type="file" accept=".csv" onChange={this.onChangeFile.bind(this)}/> */}
+/* <input id="upload" ref="upload" type="file" accept=".csv" onChange={this.onChangeFile.bind(this)}/> */
 //<Grid item md={3} sm={3}>
 //<p>{element}</p>
 //<RecipeReviewCard busqueda={element} />
