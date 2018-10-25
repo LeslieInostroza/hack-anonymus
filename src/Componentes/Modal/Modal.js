@@ -6,6 +6,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import logoPng from './../../IMG/logo1.png';
+import logoBlanco from './../../IMG/logo5.png';
 import {  CreateNewFolder, AttachFile,LiveHelp,Home} from '@material-ui/icons';
 import './Modal.css'
 import {Link} from 'react-router-dom';
@@ -71,14 +72,14 @@ class SimpleModal extends React.Component {
           <div style={getModalStyle()} className={classes.paper}>
           <img className="imgLogo" src={logoPng} alt="" />
 
-          <MenuItem className="btn" onClick={this.handleClose} component={Inicio}>Inicio <LiveHelp className="iconos3"></LiveHelp> </MenuItem>
+          <MenuItem className="btn" onClick={this.handleClose} component={Inicio}>Inicio <Home className="iconos3"></Home> </MenuItem>
             <MenuItem className="btn" onClick={this.handleClose} component={Ayuda}> Ayuda <LiveHelp className="iconos3"></LiveHelp> </MenuItem>
 
             <MenuItem className="btn" onClick={this.handleClose} component={ListaCategorias}>Categorias <AttachFile className="icon"></AttachFile> </MenuItem>
             <MenuItem className="btn" onClick={this.handleClose}component={SubirArchivo} >Subir Archivo <CreateNewFolder className="iconos3"></CreateNewFolder></MenuItem>
           </div>
         </Modal>
-          <img className="imgLogoNav" src={logoPng} alt="" />
+          <img className="imgLogoNav" src={logoBlanco} alt="" />
       </div>
     );
   }
