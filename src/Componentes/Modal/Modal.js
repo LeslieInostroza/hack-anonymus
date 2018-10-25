@@ -72,7 +72,7 @@ class SimpleModal extends React.Component {
           <div style={getModalStyle()} className={classes.paper}>
           <img className="imgLogo" src={logoPng} alt="" />
 
-          <MenuItem className="btn" onClick={this.handleClose} component={Inicio}>Inicio <LiveHelp className="iconos3"></LiveHelp> </MenuItem>
+          <MenuItem className="btn" onClick={this.handleClose} component={Inicio}>Inicio <Home className="iconos3"></Home> </MenuItem>
             <MenuItem className="btn" onClick={this.handleClose} component={Ayuda}> Ayuda <LiveHelp className="iconos3"></LiveHelp> </MenuItem>
 
             <MenuItem className="btn" onClick={this.handleClose} component={ListaCategorias}>Categorias <AttachFile className="icon"></AttachFile> </MenuItem>
