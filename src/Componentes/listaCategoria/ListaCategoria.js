@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import data from './../../data/data.json';
-import { Divider } from '@material-ui/core';
+import { Divider, Paper } from '@material-ui/core';
 // import './lista.css';
+
 
 class InteractiveList extends React.Component {
   state = {
@@ -12,7 +13,6 @@ class InteractiveList extends React.Component {
     secondary: false,
     data: [],
   };
-
 
   componentWillMount() {
     let categorias = new Set();
@@ -26,39 +26,40 @@ class InteractiveList extends React.Component {
       data: categoriasFinal
     })
   }
+
   render() {
     console.log(this.state.data)
     return (
       <div className='categoria'>
         <Grid>
-        <Grid container
-          direction="row"
-          justify="center"
-          alignItems="center">
-          <Grid item >
-            <Typography style={{marginTop: '38px'}} align='center' variant="h6" >
-              categorias
-           </Typography>
-          </Grid>
-          <Grid container style={{ textAlign: 'center', marginTop: '6em' }}
+          <Grid container
             direction="row"
             justify="center"
             alignItems="center">
-            {
-              this.state.data.map((e, i) => (
-                <Grid item md={3} sm={3} xs={6}>
-                  <p>{e}</p>
-                </Grid>
-              ))
-            }
+            <Grid item >
+              <Typography variant="h2" style={{ marginTop: '38px' }} align='center'>
+                Categorias
+           </Typography>
+            </Grid>
+            <Grid container style={{ textAlign: 'center', marginTop: '6em' }}
+              direction="row"
+              justify="center"
+              alignItems="center">
+              {
+                this.state.data.map((e, i) => (
+                  <Grid item md={3} sm={3} xs={6}>
+                    <Paper className={['paper-ty']} style={{ margin: '2em' }} elevation={1}>
+                      <Typography variant="h5" component="h3">
+                        {e}
+                      </Typography>
+                    </Paper>
+                  </Grid>
+                ))
+              }
+            </Grid>
           </Grid>
         </Grid>
-
-      </Grid>
-
       </div>
-      
-
     );
   }
 }
