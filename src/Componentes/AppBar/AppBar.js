@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import MenuDesplegable from './MenuDesplegable'
+import Modal from './../Modal/Modal'
 
 const styles = {
   root: {
@@ -25,7 +26,7 @@ function ButtonAppBar(props) {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <MenuDesplegable />
+          <Modal />
 
         </Toolbar>
       </AppBar>
