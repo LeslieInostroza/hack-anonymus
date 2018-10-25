@@ -17,6 +17,17 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Lista from './Lista';
+import './Tarjeta.css';
+import {Grid} from '@material-ui/core';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
+import { TextField, Button } from '@material-ui/core';
+import SaveIcon from '@material-ui/icons/Save';
+import classNames from 'classnames';
 
 import dataPrincipal from './../../data/data.json';//trae el archivo madre
 
@@ -52,21 +63,41 @@ const styles = theme => ({
 class RecipeReviewCard extends React.Component {
   state = { 
     expanded: false,
-    data:[]
+    data:[],
+    linea:'',
+    categoria:'',
+    subCategoria:'',
+    customtext:'',
+    visible:true
    };
 
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
   };
 
+  sendLinea(event){
+    this.setState({ linea: event });
+  }
+  sendCategoria(event){
+    this.setState({ categoria: event });
+  }
+  sendSubCategoria(event){
+    this.setState({ subCategoria: event });
+  }
+  sendCustomText(event){
+    this.setState({ subCategoria: event });
+  }
+
   render() {
     const { classes } = this.props;
     let categorias = buscar(this.props.busqueda);
-    console.log(categorias);
+    //console.log(categorias);
+    //console.log(this.state.visible); //False al apretar boton grabar
     //this.setState(state => ({ data: buscar(this.props.busqueda) }));
     
     return (
-      <Card className={classes.card} style={{width: '25em'}}>
+      this.state.visible ?
+      <Card className={classes.card} style={{width: '25em', marginBottom: '15px', marginLeft:'70px'}}>
         <CardHeader
           action={
             <IconButton>
@@ -76,15 +107,40 @@ class RecipeReviewCard extends React.Component {
           title={this.props.busqueda}
         />
         <CardContent>
-          <Lista categorias={categorias} />
+          <Lista categorias={categorias} busqueda={this.props.busqueda} 
+            sendLinea={this.sendLinea.bind(this)}
+            sendCategoria={this.sendCategoria.bind(this)}
+            sendSubCategoria={this.sendSubCategoria.bind(this)}
+            sendCustomText={this.sendCustomText.bind(this)}
+            />
+          <Button key={this.props.busqueda} onClick={this.grabar.bind(this)} variant="contained" size="small" className={classes.button}>
+            <SaveIcon className={classNames(classes.leftIcon, classes.iconSmall)} />
+            grabar
+          </Button>
         </CardContent>
-      </Card>
+      </Card>  
+      :null
     );
   }
+
+  grabar(event){
+    let seleccion = {
+      "buscar":this.props.busqueda,
+      "linea":this.state.linea,
+      "categoria":this.state.categoria,
+      "subCategoria":this.state.subCategoria,
+      "customtext":this.state.customtext
+    };
+
+    console.log('grabar:');
+    console.log(seleccion);
+    this.setState({ visible: false });
+  }
+  /*
   clickBoton(event){
     let resultado = buscar('Agua Lacteos gaseosa');
     console.log(resultado);
-  }
+  }*/
 
 }
 
@@ -99,7 +155,9 @@ function buscar(titulo){
   //let palabra = 'Bebidas agua';
   let palabras = titulo.toLowerCase().split(' ');
   let alinea = [];
- 
+  let id =0;
+
+
   let result = false;
   for(let i=0;i<palabras.length;i++){
     for(let lineaI=0;lineaI<dataPrincipal.length;lineaI++){
@@ -115,23 +173,25 @@ function buscar(titulo){
           let SubCategoria = categoria.SubCategoria[subI];
           //console.log(SubCategoria);
           if(SubCategoria.SubCategoria.toLowerCase().indexOf(palabras[i]) > -1){
-            aSubCategoria.push(SubCategoria.SubCategoria);
+            aSubCategoria.push({"id":id.toString(),"SubCategoria":SubCategoria.SubCategoria});
           }
+          id++;
         }
         if(aSubCategoria.length>0){
-          aCategoria.push({"Categoria" :categoria.categoria, "SubCategoria" :aSubCategoria});
+          aCategoria.push({"id":id.toString(),"Categoria" :categoria.categoria, "SubCategoria" :aSubCategoria});
         }else{
           if(categoria.categoria.toLowerCase().indexOf(palabras[i]) > -1){
-            aCategoria.push({"Categoria" :categoria.categoria, "SubCategoria" :[]});
+            aCategoria.push({"id":id.toString(),"Categoria" :categoria.categoria, "SubCategoria" :[]});
           }
         }
-
-      }    
+        id++;
+      }  
+      id++;  
       if(aCategoria.length>0){
-        alinea.push({"Linea":linea.Linea, "Categoria" :aCategoria});
+        alinea.push({"id":id.toString(),"Linea":linea.Linea, "Categoria" :aCategoria});
       }else{
         if(linea.Linea.toLowerCase().indexOf(palabras[i]) > -1){
-          alinea.push({"Linea":linea.Linea, "Categoria" :[]});
+          alinea.push({"id":id.toString(),"Linea":linea.Linea, "Categoria" :[]});
         }
       }
     }
