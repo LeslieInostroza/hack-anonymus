@@ -113,7 +113,7 @@ class RecipeReviewCard extends React.Component {
             sendSubCategoria={this.sendSubCategoria.bind(this)}
             sendCustomText={this.sendCustomText.bind(this)}
             />
-          <Button key={this.props.busqueda} onClick={this.grabar.bind(this)} variant="contained" size="small" className={classes.button}>
+          <Button className="btnCard" key={this.props.busqueda} onClick={this.grabar.bind(this)} variant="contained" size="small" className={classes.button}>
             <SaveIcon className={classNames(classes.leftIcon, classes.iconSmall)} />
             grabar
           </Button>

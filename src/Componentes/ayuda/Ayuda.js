@@ -2,9 +2,6 @@
 import React, { Component } from 'react';
 import './Ayuda.css';
 
-
-
-
 class VistaAyuda extends Component {
     render() {
         return(

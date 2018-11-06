@@ -4,3 +4,14 @@
 .mostrar{
     display: inline;
 }
+
+.btnCard{
+    background-color: #ffb200 !important;
+    color: grey;
+    
+}
+
+.btnCard:hover{
+    background-color: greenyellow;
+    color: grey;
+}

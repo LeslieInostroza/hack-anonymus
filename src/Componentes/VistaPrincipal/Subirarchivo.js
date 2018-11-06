@@ -6,20 +6,6 @@ import Uploadcsv from './../Uploadcsv';
 import RecipeReviewCard from './../Tarjeta/Tarjeta';
 import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 
-
-// function procesarCsv(contenido){
-
-  
-  
-//   let filas = contenido.split(/\r?\n/); // Saca saltos de linea y hace arreglo
-//   categoriasFinal.push(filas);
-//   let resultado = [];
-//   //for(let i=0;i<filas.lenght; i++){
-//     //  console.log(filas[i]);
-//   //}
-//   return filas;
-// }
-
 class Subirarchivo extends Component {
 
   constructor(){
@@ -57,8 +43,14 @@ class Subirarchivo extends Component {
     console.log(this.state.categoriasFinal);
     return (
       <div className="App">
-       <input id="upload" ref="upload" type="file" accept=".csv" onChange={this.onChangeFile.bind(this)}/>
-       <p>Su archivo contiene {this.state.categoriasFinal.length} Productos para Categorizar.</p>
+      <h2 style={{color:"grey", textAlign:"center", paddingTop:"20px",}}> Suba su archivo CSV</h2>
+      <Grid container justify='center' style={{paddingTop:"30px",}}>
+        <Grid item>
+          <input style={{color:"grey", textAlign:"center", paddingTop:"20px", borderRadius:"5px"}} id="upload" ref="upload" type="file" accept=".csv" onChange={this.onChangeFile.bind(this)}/>
+          <p style={{color:"grey", textAlign:"center", paddingTop:"30px",}}>Su archivo contiene {this.state.categoriasFinal.length} Productos para Categorizar.</p>
+        </Grid>
+      </Grid>
+       
       <ResponsiveMasonry columnsCountBreakPoints={{350:1,750:2,900:3}}>
       <Masonry>
        {
